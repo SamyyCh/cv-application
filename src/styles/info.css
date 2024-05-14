@@ -1,0 +1,11 @@
+.fullInfo {
+    max-width: 40%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    border: 1px solid black;
+}
+
+#submit {
+    width: 100%;
+}
