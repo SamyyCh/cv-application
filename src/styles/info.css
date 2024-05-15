@@ -1,11 +1,43 @@
 .fullInfo {
+    background-color: white;
     max-width: 40%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    padding: 5px;
     border: 1px solid black;
+    border-radius: 10px;
+}
+
+.infoHeader {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+}
+
+#hideInfo {
+    border-style: none;
+    background-color: white;
+}
+
+svg {
+    height: 50%;
+    width: auto;
+}
+
+#firstName, #lastName, #email, #phone {
+    margin-bottom: 5px;
+}
+
+input {
+    border-radius: 5px;
+    height: 25px;
+    margin-bottom: 10px;
 }
 
 #submit {
-    width: 100%;
+    background-color: white;
+    height: 30px;
+    margin: 5px;
+    width: 40%;
+    border-style: none;
+    border-radius: 5px;
 }

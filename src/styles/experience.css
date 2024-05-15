@@ -1,0 +1,23 @@
+.experience {
+    background-color: white;
+    max-width: 40%;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 10px
+}
+
+#company, #position, #work {
+    margin-bottom: 5px;
+}
+
+.experienceHeader {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+}
+
+#hideExperience {
+    border-style: none;
+    background-color: white;
+}
