@@ -1,0 +1,116 @@
+.fullPage {
+    width: 95%;
+    height: auto;
+    padding-bottom: 10%;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.cvHeader {
+    height: 10%;
+    background-color: rgb(164, 164, 164);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+}
+
+#fullName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 2;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#cvEmail {
+    margin: 10px;
+    grid-column: 1;
+    grid-row: 2;
+    color: white;
+    font-size: 20px;
+}
+
+#cvPhone {
+    margin: 10px;
+    grid-column: 3;
+    grid-row: 2;
+    text-align: end;
+    color: white;
+    font-size: 20px;
+}
+
+#cvEduTitle, #cvExpTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 5%;
+    width: 90%;
+    height: 40px;
+    background-color: grey;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.cvEducation {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1.5fr 1fr;
+    margin-top: 15px;
+    margin-left: 5%;
+}
+
+#cvSchool {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 18px;
+}
+
+#cvDegree, #cvPosition {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#startEndSchool, #startEndWork {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 18px;
+    text-align: left;
+}
+
+#cvLocationSchool, #cvLocationWork {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 18px;
+    text-align: left;
+}
+
+.cvExperience {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1.5fr 1fr 3fr;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    margin-left: 5%;
+}
+
+#cvCompany {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#cvWork {
+    margin-top: 10px;
+    grid-column: 2;
+    grid-row: 3;
+    font-size: 15px;
+}

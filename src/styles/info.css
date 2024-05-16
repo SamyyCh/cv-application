@@ -1,9 +1,9 @@
 .fullInfo {
     background-color: white;
-    max-width: 40%;
+    max-width: 80%;
     display: grid;
     grid-template-columns: 1fr;
-    padding: 5px;
+    padding: 10px;
     border: 1px solid black;
     border-radius: 10px;
 }
@@ -36,8 +36,8 @@ input {
 #submit {
     background-color: white;
     height: 30px;
-    margin: 5px;
-    width: 40%;
+    margin: 10px;
+    width: 80%;
     border-style: none;
     border-radius: 5px;
 }

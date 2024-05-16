@@ -5,12 +5,23 @@ import CV from './components/cv.jsx'
 import '../src/App.css'
 
 function App() {
+  const info = new Info();
+  const education = new Education();
+  const experience = new Experience();
+  const cv = new CV();
+
   return (
     <>
-    <Info />
-    <Education />
-    <Experience />
-    <CV />
+    <div className='page'>
+      <div className='left'>
+        {info}
+        {education}
+        {experience}
+      </div>
+      <div className='right'>
+        {cv}
+      </div>
+    </div>
     </>
   )
 }
