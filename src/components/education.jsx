@@ -42,13 +42,15 @@ function education() {
             />
             <div id='start'>Start Date</div>
             <input
-            type="date"
+            type="text"
+            placeholder='2020'
             value={startDate}
             onChange={(event) => setStartDate(event.target.value)}
             />
             <div id='end'>End Date</div>
             <input
-            type="date"
+            type="text"
+            placeholder='2024'
             value={endDate}
             onChange={(event) => setEndDate(event.target.value)}
             />
@@ -61,7 +63,10 @@ function education() {
             </>
             )}
         </div>
-        <button id='submit'>Submit</button>
+        <div className='buttons'>
+            <button id='submit'>Submit</button>
+            <button id='delete'>Delete</button>
+        </div>
         </>
     );
 }

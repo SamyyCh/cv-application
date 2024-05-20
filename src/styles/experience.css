@@ -21,3 +21,8 @@
     border-style: none;
     background-color: white;
 }
+
+#workBox {
+    word-wrap: normal;
+    height: 60px;
+}

@@ -28,6 +28,12 @@ function cv() {
                 <div id='startEndSchool'>2021 - 2023</div>
                 <div id='cvLocationSchool'>Montreal</div>
             </div>
+                        <div className='cvEducation'>
+                <div id='cvSchool'>John Abbott School of Business</div>
+                <div id='cvDegree'>Bachelor of Science in New Media and Internet Marketing</div>
+                <div id='startEndSchool'>2021 - 2023</div>
+                <div id='cvLocationSchool'>Montreal</div>
+            </div>
             <div id='cvExpTitle'>Experience</div>
             <div className='cvExperience'>
                 <div id='cvCompany'>Netflix</div>

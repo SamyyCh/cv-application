@@ -43,13 +43,15 @@ function experience() {
             />
             <div id='start'>Start Date</div>
             <input
-            type="date"
+            type="text"
+            placeholder='2020'
             value={startDate}
             onChange={(event) => setStartDate(event.target.value)}
             />
             <div id='end'>End Date</div>
             <input
-            type="date"
+            type="text"
+            placeholder='2024'
             value={endDate}
             onChange={(event) => setEndDate(event.target.value)}
             />
@@ -60,7 +62,8 @@ function experience() {
             onChange={(event) => setLocation(event.target.value)}
             />
             <div id='work'>Work Description</div>
-            <input
+            <textarea
+            id='workBox'
             type='text'
             value={work}
             onChange={(event) => setWork(event.target.value)}
@@ -68,7 +71,10 @@ function experience() {
             </>
             )}
         </div>
-        <button id='submit'>Submit</button>
+        <div className='buttons'>
+            <button id='submit'>Submit</button>
+            <button id='delete'>Delete</button>
+        </div>
         </>
     );
 }

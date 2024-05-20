@@ -54,7 +54,10 @@ function info() {
             </>
             )}
         </div>
-        <button id='submit'>Submit</button>
+        <div className='buttons'>
+            <button id='submit'>Submit</button>
+            <button id='delete'>Delete</button>
+        </div>
         </>
     );
 }

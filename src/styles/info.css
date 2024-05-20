@@ -33,11 +33,20 @@ input {
     margin-bottom: 10px;
 }
 
-#submit {
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 84%;
+}
+
+#submit, #delete {
     background-color: white;
     height: 30px;
     margin: 10px;
-    width: 80%;
     border-style: none;
     border-radius: 5px;
+}
+
+#submit:hover, #delete:hover {
+    background-color: lightblue;
 }
