@@ -1,24 +1,40 @@
 import { useState } from 'react';
 import '../styles/education.css';
 
-function Education({ updateEducation }) {
+function Education({ education, updateEducation, editEducation, removeEducation }) {
     const [school, setSchool] = useState("");
     const [degree, setDegree] = useState("");
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
     const [location, setLocation] = useState("");
     const [isEditing, setIsEditing] = useState(true);
+    const [editIndex, setEditIndex] = useState(null);
 
     const handleSubmit = () => {
-        setIsEditing(false);
-        updateEducation({ school, degree, startDate, endDate, location });
-        // Clear the form fields after submission
+        if (editIndex !== null) {
+            editEducation(editIndex, { school, degree, startDate, endDate, location });
+        } else {
+            updateEducation({ school, degree, startDate, endDate, location });
+        }
+
         setSchool("");
         setDegree("");
         setStartDate("");
         setEndDate("");
         setLocation("");
         setIsEditing(true);
+        setEditIndex(null);
+    };
+
+    const handleEdit = (index) => {
+        const edu = education[index];
+        setSchool(edu.school);
+        setDegree(edu.degree);
+        setStartDate(edu.startDate);
+        setEndDate(edu.endDate);
+        setLocation(edu.location);
+        setIsEditing(true);
+        setEditIndex(index);
     };
 
     return (
@@ -66,11 +82,25 @@ function Education({ updateEducation }) {
                         value={location}
                         onChange={(event) => setLocation(event.target.value)}
                     />
-                    <button id='submit' onClick={handleSubmit}>Add Education</button>
+                    <button id='submit' onClick={handleSubmit}>
+                        {editIndex !== null ? 'Edit Education' : 'Add Education'}
+                    </button>
                 </>
             ) : (
                 <></>
             )}
+            <div>
+                {education.map((edu, index) => (
+                    <div className='eduItem' key={index}>
+                        <div id='eduSchool'>{edu.school}</div>
+                        <div id='eduDegree'>{edu.degree}</div>
+                        <div id='eduDates'>{edu.startDate} - {edu.endDate}</div>
+                        <div id='eduLocation'>{edu.location}</div>
+                        <button id='eduEdit' onClick={() => handleEdit(index)}>Edit</button>
+                        <button id='eduDel' onClick={() => removeEducation(index)}>Delete</button>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }

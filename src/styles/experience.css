@@ -22,7 +22,21 @@
     background-color: white;
 }
 
-#workB {
-    word-wrap: normal;
-    height: 60px;
+#expCompany, #expPosition, #expDates, #expLocation, #expWork {
+    margin-bottom: 3px;
+}
+
+#expEdit, #expDel {
+    margin-top: 3px;
+    margin-bottom: 6px;
+    background-color: white;
+    height: 20px;
+    border-style: none;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-right: 5px;
+}
+
+#expEdit:hover, #expDel:hover {
+    background-color: lightblue;
 }

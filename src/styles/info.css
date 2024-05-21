@@ -6,6 +6,7 @@
     padding: 10px;
     border: 1px solid black;
     border-radius: 10px;
+    margin-bottom: 30px;
 }
 
 .infoHeader {
@@ -39,6 +40,7 @@ input {
     border-style: none;
     border-radius: 5px;
     border: 1px solid black;
+    margin-bottom: 10px;
 }
 
 #submit:hover, #edit:hover {

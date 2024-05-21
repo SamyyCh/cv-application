@@ -5,7 +5,8 @@
     grid-template-columns: 1fr;
     padding: 10px;
     border: 1px solid black;
-    border-radius: 10px
+    border-radius: 10px;
+    margin-bottom: 30px;
 }
 
 #school, #degree, #start, #end, #location {
@@ -20,4 +21,23 @@
 #hideEducation {
     border-style: none;
     background-color: white;
+}
+
+#eduSchool, #eduDegree, #eduDates, #eduLocation {
+    margin-bottom: 3px;
+}
+
+#eduEdit, #eduDel {
+    margin-top: 3px;
+    margin-bottom: 6px;
+    background-color: white;
+    height: 20px;
+    border-style: none;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-right: 5px;
+}
+
+#eduEdit:hover, #eduDel:hover {
+    background-color: lightblue;
 }

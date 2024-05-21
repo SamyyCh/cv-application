@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../styles/experience.css';
 
-function Experience({ updateExperience }) {
+function Experience({ experience, updateExperience, editExperience, removeExperience }) {
     const [company, setCompany] = useState("");
     const [position, setPosition] = useState("");
     const [work, setWork] = useState("");
@@ -9,11 +9,15 @@ function Experience({ updateExperience }) {
     const [endDate, setEndDate] = useState("");
     const [location, setLocation] = useState("");
     const [isEditing, setIsEditing] = useState(true);
+    const [editIndex, setEditIndex] = useState(null);
 
     const handleSubmit = () => {
-        setIsEditing(false);
-        updateExperience({ company, position, work, startDate, endDate, location });
-        // Clear the form fields after submission
+        if (editIndex !== null) {
+            editExperience(editIndex, { company, position, work, startDate, endDate, location });
+        } else {
+            updateExperience({ company, position, work, startDate, endDate, location });
+        }
+
         setCompany("");
         setPosition("");
         setWork("");
@@ -21,6 +25,19 @@ function Experience({ updateExperience }) {
         setEndDate("");
         setLocation("");
         setIsEditing(true);
+        setEditIndex(null);
+    };
+
+    const handleEdit = (index) => {
+        const exp = experience[index];
+        setCompany(exp.company);
+        setPosition(exp.position);
+        setWork(exp.work);
+        setStartDate(exp.startDate);
+        setEndDate(exp.endDate);
+        setLocation(exp.location);
+        setIsEditing(true);
+        setEditIndex(index);
     };
 
     return (
@@ -74,13 +91,29 @@ function Experience({ updateExperience }) {
                         value={work}
                         onChange={(event) => setWork(event.target.value)}
                     />
-                    <button id='submit' onClick={handleSubmit}>Add Experience</button>
+                    <button id='submit' onClick={handleSubmit}>
+                        {editIndex !== null ? 'Edit Experience' : 'Add Experience'}
+                    </button>
                 </>
             ) : (
                 <></>
             )}
+            <div>
+                {experience.map((exp, index) => (
+                    <div key={index}>
+                        <div id='expCompany'>{exp.company}</div>
+                        <div id='expPosition'>{exp.position}</div>
+                        <div id='expDates'>{exp.startDate} - {exp.endDate}</div>
+                        <div id='expLocation'>{exp.location}</div>
+                        <div id='expWork'>{exp.work}</div>
+                        <button id='expEdit' onClick={() => handleEdit(index)}>Edit</button>
+                        <button id='expDel' onClick={() => removeExperience(index)}>Delete</button>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }
 
 export default Experience;
+
