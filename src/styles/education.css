@@ -23,6 +23,13 @@
     background-color: white;
 }
 
+.eduItem {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
 #eduSchool, #eduDegree, #eduDates, #eduLocation {
     margin-bottom: 3px;
 }
@@ -39,5 +46,6 @@
 }
 
 #eduEdit:hover, #eduDel:hover {
-    background-color: lightblue;
+    color: white;
+    background-color: rgb(186, 186, 186);
 }

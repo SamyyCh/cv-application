@@ -86,7 +86,7 @@ function Experience({ experience, updateExperience, editExperience, removeExperi
                         onChange={(event) => setLocation(event.target.value)}
                     />
                     <div id='work'>Main Responsibilities</div>
-                    <input
+                    <textarea
                         type="text"
                         value={work}
                         onChange={(event) => setWork(event.target.value)}
@@ -100,7 +100,7 @@ function Experience({ experience, updateExperience, editExperience, removeExperi
             )}
             <div>
                 {experience.map((exp, index) => (
-                    <div key={index}>
+                    <div className='expItem' key={index}>
                         <div id='expCompany'>{exp.company}</div>
                         <div id='expPosition'>{exp.position}</div>
                         <div id='expDates'>{exp.startDate} - {exp.endDate}</div>

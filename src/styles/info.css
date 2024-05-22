@@ -44,5 +44,6 @@ input {
 }
 
 #submit:hover, #edit:hover {
-    background-color: lightblue;
+    color: white;
+    background-color: rgb(186, 186, 186);
 }

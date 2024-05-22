@@ -6,13 +6,59 @@ import CV from './components/cv.jsx';
 import './App.css';
 
 function App() {
-    const [info, setInfo] = useState({});
-    const [education, setEducation] = useState([]);
-    const [experience, setExperience] = useState([]);
+
+    const presetInfo = {
+        firstName: "John",
+        lastName: "Doe",
+        email: "john.doe@example.com",
+        phone: "123-456-7890"
+    };
+
+    const presetEducation = [
+        {
+            school: "University of Boston",
+            degree: "BSc Computer Science",
+            startDate: "2010",
+            endDate: "2014",
+            location: "Boston"
+        },
+        {
+            school: "University of Nashville",
+            degree: "BSc Cyber Security",
+            startDate: "2015",
+            endDate: "2019",
+            location: "Nashville"
+        }
+    ];
+
+    const presetExperience = [
+        {
+            company: "Netflix",
+            position: "Software Engineer",
+            work: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse incidunt et dolor harum mollitia architecto ea vero corporis officia nemo, suscipit in veritatis laboriosam error culpa repellendus voluptatibus iste maxime.",
+            startDate: "2019",
+            endDate: "2023",
+            location: "San Francisco"
+        },
+        {
+            company: "Apple",
+            position: "Junior Software Engineer",
+            work: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse incidunt et dolor harum mollitia architecto ea vero corporis officia nemo.",
+            startDate: "2024",
+            endDate: "Current",
+            location: "New York"
+        }
+    ];
+
+    const [info, setInfo] = useState(presetInfo);
+    const [education, setEducation] = useState(presetEducation);
+    const [experience, setExperience] = useState(presetExperience);
 
     const updateInfo = (newInfo) => setInfo(newInfo);
 
-    const updateEducation = (newEducation) => setEducation([...education, newEducation]);
+    const updateEducation = (newEducation) => {
+        setEducation(prev => (prev === presetEducation ? [newEducation] : [...prev, newEducation]));
+    };
 
     const editEducation = (index, updatedEducation) => {
         const updatedEducations = [...education];
@@ -25,7 +71,9 @@ function App() {
         setEducation(updatedEducations);
     };
 
-    const updateExperience = (newExperience) => setExperience([...experience, newExperience]);
+    const updateExperience = (newExperience) => {
+        setExperience(prev => (prev === presetExperience ? [newExperience] : [...prev, newExperience]));
+    };
 
     const editExperience = (index, updatedExperience) => {
         const updatedExperiences = [...experience];
